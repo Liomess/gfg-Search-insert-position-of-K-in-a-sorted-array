@@ -1,0 +1,15 @@
+class Solution:
+    def searchInsertK(self, arr, n, m):
+        ans=n
+        l=0
+        h=n-1
+        while l<=h:
+            mid=l+(h-l)//2
+            if arr[mid]==m:
+                return mid
+            elif arr[mid] >= m:
+                ans=mid
+                h=mid-1
+            else:
+                l=mid+1
+        return ans
